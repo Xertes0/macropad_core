@@ -7,8 +7,7 @@
 constexpr uint32_t SLEEP_MS{50};
 
 constexpr std::array PIN_ARRAY {
-	//0,2,4,6,8
-	10,0,9,1,5,16,12,6,3,1 // 1
+	15,4,2,0,10,8,6,16,14,12
 };
 
 auto
