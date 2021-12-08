@@ -8,7 +8,7 @@
 constexpr uint32_t SLEEP_MS{50};
 
 constexpr std::array PIN_ARRAY {
-	19,4,2,0,10,8,6,16,14,12
+	19,4,2,0,10,8,6,16,14,12 // 0,1,2...9
 };
 
 auto
@@ -28,7 +28,9 @@ main() -> int
 		gpio_pull_up(pin);
 	}
 
-	char buffer[PIN_ARRAY.size()+1] = {'\0'};
+	std::array<char, PIN_ARRAY.size()+1> buffer{};
+	buffer.fill('\0');
+
 	bool all_down = true;
 	while(true) {
 		all_down = true;
@@ -43,7 +45,7 @@ main() -> int
 		if(all_down) {
 			reset_usb_boot(0,0);
 		}
-		printf("%s\n", buffer);
+		printf("%s\n", buffer.data());
 		sleep_ms(SLEEP_MS);
 	}
 	return 0;
