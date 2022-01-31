@@ -19,7 +19,7 @@ main() -> int
 	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 	gpio_put(PICO_DEFAULT_LED_PIN, 1);
 #endif
-	
+
 	stdio_init_all();
 
 	for(auto const& pin : PIN_ARRAY) {
